@@ -43,17 +43,12 @@
   </script>
 
   <script id="recent-messages" type="text/x-mustache" charset="utf-8">
-        <h3>Recent Messages</h3>
+        <h3>Recent Data</h3>
         <ul id="items">
           {{#items}}
             <li>
-              <div class="avatar">
-                {{#gravatar_url}}<img src="{{gravatar_url}}" alt="{{name}}"/>{{/gravatar_url}}
-                <div class="name">
-                  {{nickname}}
-                </div>
-              </div>
-              <p>{{message}}</p>
+              <p>{{title}}</p>
+              <img src="{{imgs}}" alt="{{title}}"></img>
               <div style="clear:left;"></div>
             </li>
           {{/items}}

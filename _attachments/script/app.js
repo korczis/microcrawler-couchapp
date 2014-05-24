@@ -21,7 +21,7 @@ $(function() {
         design = path[3],
         db = $.couch.db(path[1]);
     function drawItems() {
-        db.view(design + "/recent-items", {
+        db.view(design + "/recent-data", {
             descending : "true",
             limit : 50,
             update_seq : true,
