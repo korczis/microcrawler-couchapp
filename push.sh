@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
-# Push couchapp
-couchapp push
+ # Assign directory name to a variable
+APP_NAME=${PWD##*/}
 
+# Push couchapp
+couchapp push . "http://localhost:5984/$APP_NAME"
