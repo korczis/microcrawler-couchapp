@@ -3,5 +3,9 @@
  # Assign directory name to a variable
 APP_NAME=${PWD##*/}
 
+HOST="localhost"
+
+PORT=5985
+
 # Push couchapp
-couchapp push . "http://localhost:5984/$APP_NAME"
+couchapp push . "http://apollo:apollo@$HOST:$PORT/$APP_NAME"
