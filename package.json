@@ -1,0 +1,19 @@
+{
+  "name": "microcrawler-couchapp",
+  "version": "0.0.0",
+  "description": "Microcrawler CouchApp Sample Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/korczis/microcrawler-couchapp.git"
+  },
+  "author": "korczis@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/korczis/microcrawler-couchapp/issues"
+  },
+  "homepage": "https://github.com/korczis/microcrawler-couchapp"
+}
