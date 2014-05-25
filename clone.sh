@@ -11,5 +11,4 @@ HOST="localhost"
 
 PORT=5985
 
-# Push couchapp
-couchapp push . "http://$USERNAME:$PASSWORD@$HOST:$PORT/$APP_NAME"
+couchapp clone http://$USERNAME:$PASSWORD@$HOST:$PORT/$APP_NAME/_design/$APP_NAME $APP_NAME
