@@ -28,6 +28,7 @@
 
         grunt.loadNpmTasks('grunt-bower-task');
         grunt.loadNpmTasks('grunt-contrib-concat');
+        grunt.loadNpmTasks('grunt-contrib-cssmin');
         grunt.loadNpmTasks('grunt-ember-templates');
 
         grunt.initConfig({
@@ -78,6 +79,18 @@
                 }
             },
 
+            cssmin: {
+                combine: {
+                    keepSpecialComments: true,
+                    files: {
+                        '_attachments/assets/bundle.css': [
+                            '_attachments/style/bootstrap.css',
+                            '_attachments/style/app.css'
+                        ]
+                    }
+                }
+            },
+
             emberTemplates: {
                 compile: {
                     options: {
@@ -102,8 +115,9 @@
 
         // Build all assets required for running the app
         grunt.registerTask('build', [
+            'emberTemplates',
             'concat',
-            'emberTemplates'
+            'cssmin'
         ]);
 
         // Clean all assets created during build
