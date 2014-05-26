@@ -4,5 +4,6 @@
   // ".*~$"
   // ".*\\.swp$"
   // ".*\\.bak$"
-  "bower_modules"
+  "bower_modules",
+  "node_modules"
 ]
