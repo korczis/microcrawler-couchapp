@@ -48,7 +48,9 @@
           {{#items}}
             <li>
               <p><a href="{{url}}">{{title}}</a></p>
-              <img src="{{thumbnails}}" alt="{{title}}"></img>
+              <a href="{{url}}">
+                <img src="{{thumbnails}}" alt="{{title}}"></img>
+              </a>
               <div style="clear:left;"></div>
             </li>
           {{/items}}

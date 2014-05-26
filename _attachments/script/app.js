@@ -34,7 +34,9 @@ $(function() {
             }
         });
     };
+
     drawItems();
+
     var changesRunning = false;
     function setupChanges(since) {
         if (!changesRunning) {
