@@ -27,6 +27,7 @@
         var templatesDir = "./_attachments/templates/";
 
         grunt.loadNpmTasks('grunt-bower-task');
+        grunt.loadNpmTasks('grunt-contrib-concat');
         grunt.loadNpmTasks('grunt-ember-templates');
 
         grunt.initConfig({
@@ -40,6 +41,29 @@
             bower: {
                 install: {
                     //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
+                }
+            },
+
+            concat: {
+                options: {
+                    separator: ';'
+                },
+
+                app: {
+                    src: [
+                        '_attachments/script/app/app.js'
+                    ],
+                    dest: '_attachments/assets/app.js'
+                },
+
+                vendor: {
+                    src: [
+                        '_attachments/script/jquery/jquery.js',
+                        '_attachments/script/handlebars/handlebars.js',
+                        '_attachments/script/ember/ember.js',
+                        '_attachments/script/ember-data/ember-data.js'
+                    ],
+                    dest: '_attachments/assets/vendor.js'
                 }
             },
 
@@ -67,6 +91,7 @@
 
         // Build all assets required for running the app
         grunt.registerTask('build', [
+            'concat',
             'emberTemplates'
         ]);
 
