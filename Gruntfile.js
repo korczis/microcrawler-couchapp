@@ -61,9 +61,20 @@
                         '_attachments/script/jquery/jquery.js',
                         '_attachments/script/handlebars/handlebars.js',
                         '_attachments/script/ember/ember.js',
-                        '_attachments/script/ember-data/ember-data.js'
+                        '_attachments/script/ember-data/ember-data.js',
+                        '_attachments/script/jquery.couch/jquery.couch.js',
+                        '_attachments/script/ember-couchdb-kit/ember-couchdb-kit.js'
                     ],
                     dest: '_attachments/assets/vendor.js'
+                },
+
+                bundle: {
+                    src: [
+                        '_attachments/assets/vendor.js',
+                        '_attachments/assets/app.js',
+                        '_attachments/assets/templates.js'
+                    ],
+                    dest: '_attachments/assets/bundle.js'
                 }
             },
 

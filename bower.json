@@ -32,10 +32,11 @@
     "moment": "2.5.1",
     "r.js": "~2.1.11",
     "normalize-css": "~3.0.0",
-    "font-awesome": "~4.0.3"
+    "font-awesome": "~4.0.3",
+    "jquery.couch": "*"
   },
   "resolutions": {
-    "jquery": "2.1.0",
+    "jquery": ">= 1.7.0 <= 2.1.0",
     "ember": "1.6.0-beta.4"
   }
 }
