@@ -18,6 +18,7 @@ coverage
 
 .idea
 
+_attachments/assets/*.css
 _attachments/assets/*.js
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
