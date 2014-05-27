@@ -52,7 +52,16 @@
 
                 app: {
                     src: [
-                        '_attachments/script/app/app.js'
+                        // Core app
+                        '_attachments/script/app/app.js',
+
+                        // Core scripts
+                        '_attachments/script/app/logger.js',
+                        '_attachments/script/app/router.js',
+                        '_attachments/script/app/xhr.js',
+
+                        // Views
+                        '_attachments/script/app/appView.js'
                     ],
                     dest: '_attachments/assets/app.js'
                 },
@@ -64,7 +73,8 @@
                         '_attachments/script/ember/ember.js',
                         '_attachments/script/ember-data/ember-data.js',
                         '_attachments/script/jquery.couch/jquery.couch.js',
-                        '_attachments/script/ember-couchdb-kit/ember-couchdb-kit.js'
+                        '_attachments/script/ember-couchdb-kit/ember-couchdb-kit.js',
+                        '_attachments/script/moment/moment.js'
                     ],
                     dest: '_attachments/assets/vendor.js'
                 },

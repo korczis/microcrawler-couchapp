@@ -21,6 +21,13 @@
 (function (module) {
     'use strict';
 
-    var App = module.App = Ember.Application.create({});
+    var App = module.App;
+
+    App.Router.map(function () {
+        this.route("admin", { path: "/admin" });
+        this.route("config", { path: "/config" });
+
+        // TODO: Add your routes below this line for easier merging
+    });
 
 }(this));

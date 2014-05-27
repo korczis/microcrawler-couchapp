@@ -21,6 +21,15 @@
 (function (module) {
     'use strict';
 
-    var App = module.App = Ember.Application.create({});
+    var App = module.App;
+
+    App.reopen({
+        xhr: Ember.Object.create({
+            xhr: function (options) {
+                App.logger.log("App.xhr.xhr(" + JSON.stringify(options.url) + ")");
+                return $.ajax(options);
+            }
+        })
+    });
 
 }(this));

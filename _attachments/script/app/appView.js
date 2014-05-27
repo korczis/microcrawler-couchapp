@@ -21,6 +21,22 @@
 (function (module) {
     'use strict';
 
-    var App = module.App = Ember.Application.create({});
+    var App = module.App;
+
+    App.ApplicationView = Ember.View.extend({
+        classNames: ['app-view'],
+        templateName: "application",
+
+        /**
+         * Called when inserted to DOM.
+         * @memberof Application.ApplicationView
+         * @instance
+         */
+        didInsertElement: function () {
+            var log = App.logger && App.logger.log  ? App.logger.log : console.log;
+            log("App.ApplicationView.didInsertElement()");
+            // console.log('App.ApplicationView');
+        }
+    });
 
 }(this));
