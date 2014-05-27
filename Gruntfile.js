@@ -25,6 +25,7 @@
         var path = require('path');
 
         var templatesDir = "./_attachments/templates/";
+        var routesDir = "./_attachments/script/app/routes/";
 
         grunt.loadNpmTasks('grunt-bower-task');
         grunt.loadNpmTasks('grunt-contrib-concat');
@@ -61,7 +62,10 @@
                         '_attachments/script/app/xhr.js',
 
                         // Views
-                        '_attachments/script/app/appView.js'
+                        '_attachments/script/app/appView.js',
+
+                        // Routes
+                        '_attachments/script/app/routes/stream/appView.js'
                     ],
                     dest: '_attachments/assets/app.js'
                 },
@@ -70,8 +74,8 @@
                     src: [
                         '_attachments/script/jquery/jquery.js',
                         '_attachments/script/handlebars/handlebars.js',
-                        '_attachments/script/ember/ember.js',
-                        '_attachments/script/ember-data/ember-data.js',
+                        '_attachments/script/ember/ember.min.js',
+                        '_attachments/script/ember-data/ember-data.min.js',
                         '_attachments/script/jquery.couch/jquery.couch.js',
                         '_attachments/script/ember-couchdb-kit/ember-couchdb-kit.js',
                         '_attachments/script/moment/moment.js'
@@ -108,7 +112,7 @@
                             var res = filename;
 
                             res = res.replace(templatesDir, '');
-                            res = res.replace(/^routes\//, "");
+                            res = res.replace(routesDir, '');
 
                             return res;
                         }
@@ -116,7 +120,8 @@
 
                     files: {
                         "./_attachments/assets/templates.js": [
-                                templatesDir + "**/*.hbs"
+                            templatesDir + "**/*.hbs",
+                            routesDir + "**/*.hbs"
                         ]
                     }
                 }
