@@ -24,8 +24,10 @@
     var App = module.App;
 
     App.Router.map(function () {
-        this.route("admin", { path: "/admin" });
-        this.route("config", { path: "/config" });
+        this.route("data", { path: "/data" });
+        this.route("queue", { path: "/queue" });
+        this.route("stream", { path: "/stream" });
+        // this.route("config", { path: "/config" });
 
         // TODO: Add your routes below this line for easier merging
     });
