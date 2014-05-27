@@ -3,4 +3,16 @@
         <h1>Live Stream</h1>
         <p class="lead">This is live stream. You will like it.</p>
     </div>
+
+    {{#each view.data}}
+        <div>
+            <a {{bind-attr href="value.url"}}>
+                <img {{bind-attr src="value.thumbnails.0"}}></a>
+            </a>
+
+            <a {{bind-attr href="value.url"}}>
+                {{value.title}}
+            </a>
+        </div>
+    {{/each}}
 </div><!-- /.container -->

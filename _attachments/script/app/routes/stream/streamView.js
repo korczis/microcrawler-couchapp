@@ -26,6 +26,8 @@
     App.StreamView = Ember.View.extend({
         templateName: "stream/index",
 
+        data: Ember.A([{},{}]),
+
         /**
          * Called when inserted to DOM.
          * @memberof Application.ApplicationView
@@ -34,6 +36,22 @@
         didInsertElement: function () {
             var log = App.logger && App.logger.log  ? App.logger.log : console.log;
             log("App.StreamView.didInsertElement()");
+
+            var path = unescape(document.location.pathname).split('/'),
+                design = path[3],
+                db = $.couch.db(path[1]);
+
+            var self = this;
+            setTimeout(function() {
+                db.view(design + "/recent-data", {
+                    descending : "true",
+                    limit : 50,
+                    update_seq : true,
+                    success : function(data) {
+                        self.set('data', data.rows);
+                    }
+                });
+            }, 10);
         }
     });
 

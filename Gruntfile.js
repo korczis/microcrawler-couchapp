@@ -78,6 +78,7 @@
                         '_attachments/script/handlebars/handlebars.js',
                         '_attachments/script/ember/ember.js',
                         '_attachments/script/ember-data/ember-data.js',
+                        '_attachments/script/jquery.browser/jquery.browser.js',
                         '_attachments/script/jquery.couch/jquery.couch.js',
                         '_attachments/script/ember-couchdb-kit/ember-couchdb-kit.js',
                         '_attachments/script/moment/moment.js'
