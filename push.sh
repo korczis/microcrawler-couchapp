@@ -9,7 +9,7 @@ PASSWORD="apollo"
 
 HOST="localhost"
 
-PORT=5985
+PORT=5984
 
 # Push couchapp
 couchapp push . "http://$USERNAME:$PASSWORD@$HOST:$PORT/$APP_NAME"
