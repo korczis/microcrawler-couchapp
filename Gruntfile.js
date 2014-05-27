@@ -65,7 +65,9 @@
                         '_attachments/script/app/appView.js',
 
                         // Routes
-                        '_attachments/script/app/routes/stream/appView.js'
+                        '_attachments/script/app/routes/data/dataView.js',
+                        '_attachments/script/app/routes/queue/queueView.js',
+                        '_attachments/script/app/routes/stream/streamView.js'
                     ],
                     dest: '_attachments/assets/app.js'
                 },
@@ -74,8 +76,8 @@
                     src: [
                         '_attachments/script/jquery/jquery.js',
                         '_attachments/script/handlebars/handlebars.js',
-                        '_attachments/script/ember/ember.min.js',
-                        '_attachments/script/ember-data/ember-data.min.js',
+                        '_attachments/script/ember/ember.js',
+                        '_attachments/script/ember-data/ember-data.js',
                         '_attachments/script/jquery.couch/jquery.couch.js',
                         '_attachments/script/ember-couchdb-kit/ember-couchdb-kit.js',
                         '_attachments/script/moment/moment.js'
