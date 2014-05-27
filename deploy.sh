@@ -1,3 +1,10 @@
 #! /usr/bin/env bash
 
-grunt && ./push.sh
+echo "Running grunt ..."
+grunt
+echo
+
+echo "Calling push script ..."
+./push.sh
+echo
+
