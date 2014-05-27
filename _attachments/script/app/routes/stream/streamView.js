@@ -41,17 +41,29 @@
                 design = path[3],
                 db = $.couch.db(path[1]);
 
+            var changesRunning = false;
             var self = this;
-            setTimeout(function() {
-                db.view(design + "/recent-data", {
-                    descending : "true",
-                    limit : 50,
-                    update_seq : true,
-                    success : function(data) {
-                        self.set('data', data.rows);
-                    }
-                });
-            }, 10);
+            var doPolling = function() {
+                setTimeout(function() {
+                    db.view(design + "/recent-data", {
+                        descending : "true",
+                        limit : 50,
+                        update_seq : true,
+                        success : function(data) {
+                            var since = data.update_seq;
+
+                            if(!changesRunning) {
+                                var changeHandler = db.changes(since);
+                                changeHandler.onChange(doPolling);
+                                changesRunning = true;
+                            }
+
+                            self.set('data', data.rows);
+                        }
+                    });
+                }, 10);
+            };
+            doPolling();
         }
     });
 
